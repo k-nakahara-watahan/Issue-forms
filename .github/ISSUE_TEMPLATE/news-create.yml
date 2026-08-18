@@ -1,1 +1,63 @@
+name: "🆕 NEWSを新規登録する"
 
+description: "食肉マイスターサイトに新しいNEWSを登録します"
+
+title: "[NEWS新規]"
+
+labels:
+  - "news-create"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## NEWS新規登録
+
+        以下の内容を入力してください
+        登録後、すぐには公開されません
+        プレビュー画面を確認した後に公開できます
+
+  - type: input
+    id: publish-date
+    attributes:
+      label: "公開日"
+      description: "YYYY-MM-DD形式で入力してください"
+      placeholder: "2026-08-18"
+    validations:
+      required: true
+
+  - type: input
+    id: news-title
+    attributes:
+      label: "NEWSタイトル"
+      description: "サイトに表示するタイトルを入力してください"
+      placeholder: "食肉マイスター認定試験のお知らせ"
+    validations:
+      required: true
+
+  - type: textarea
+    id: news-body
+    attributes:
+      label: "本文"
+      description: "NEWS本文を入力してください"
+      placeholder: |
+        第○回食肉マイスター認定試験を開催します
+
+        詳細は以下をご確認ください
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: "リンク先"
+      description: "詳細ページ等がある場合のみ入力してください"
+      placeholder: "https://example.jp/"
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "確認"
+      options:
+        - label: "入力内容を確認しました"
+          required: true
